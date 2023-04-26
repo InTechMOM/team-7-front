@@ -3,31 +3,26 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Página de inicio de sesión</title>
+	<title>Login Falso EdVisto</title>
 	<link rel="stylesheet" href="style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap" rel="stylesheet">
+	<script src="script.js"></script>
 </head>
 <body>
-	<header class="encabezado">
+	<header class="header">
 	</header>
 
 	<div class="login-container">
-		<h1 class="login-title">Inicio de sesión</h1>
+		<h1 class="login-title">Iniciar sesión</h1>
 		<form class="login-form">
-			<label class="form-label">
-				<input type="checkbox" name="docente" class="form-checkbox">
-				<span class="form-checkmark"></span>
-				Docente
-			</label>
-			<label class="form-label">
-				<input type="checkbox" name="estudiante" class="form-checkbox">
-				<span class="form-checkmark"></span>
-				Estudiante
-			</label>
-			<input type="text" name="usuario" placeholder="Nombre de usuario" class="form-input">
-			<input type="password" name="password" placeholder="Contraseña" class="form-input">
-			<button type="submit" class="form-button">Iniciar sesión</button>
+			<input type="text" name="usuario" placeholder="Correo electrónico" class="form-input">
+			<label class="form-label"><input type="radio" checked="checked" name="radio"><span class="checkmark"></span>Soy profesor</label>
+			<label class="form-label"><input type="radio" name="radio"><span class="checkmark"></span>Soy estudiante</label>
+			<button type="submit" class="form-button">Ingresar</button>
 		</form>
 	</div>
-	<script src="script.js"></script>
+	
 </body>
 </html>
