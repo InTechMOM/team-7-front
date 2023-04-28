@@ -17,8 +17,8 @@
 
 	<div class="login-container">
 		<h1 class="login-title">Iniciar sesión</h1>
-		<form class="login-form">
-			<input type="email" name="email" placeholder="Correo electrónico" class="form-input">
+		<form class="login-form" onsubmit="return validarEmail()">
+			<input class="form-input" type="email" id="email" name="email" required minlength="4" maxlength="256" placeholder="Correo electrónico">
 			<label class="form-label"><input type="radio" checked="checked" name="radio"><span class="checkmark"></span>Soy profesor</label>
 			<label class="form-label"><input type="radio" name="radio"><span class="checkmark"></span>Soy estudiante</label>
 			<button type="submit" class="form-button">Ingresar</button>
