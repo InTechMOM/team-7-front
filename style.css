@@ -334,11 +334,13 @@ label.form-label {
 	display: flex;
 	justify-content: center;
 	margin: 100px;
+	
 	}
   
 .column {
 	margin: 0 10px;
 	text-align: center;
+	width: 33%;
 	}
   
 .input-box {
@@ -382,6 +384,14 @@ input::placeholder {
 	border-radius: 5px ;
 	}
 
+
+@media only screen and (max-width: 900px) {
+	.column {
+	width: 100%;
+		}
+	}
+
+	
 /*textarea descripción del video*/
 
 .container-textarea {

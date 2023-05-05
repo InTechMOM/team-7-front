@@ -6,9 +6,9 @@ const circles2 = document.querySelectorAll(".circle-2");
 const circles3 = document.querySelectorAll(".circle-3");
 const circles4 = document.querySelectorAll(".circle-4");
 
-circles.forEach((circle) => {
+circles1.forEach((circle) => {
   circle.addEventListener("click", () => {
-    circles.forEach((c) => c.classList.remove("active"));
+    circles1.forEach((c) => c.classList.remove("active"));
     circle.classList.add("active");
   });
 });
