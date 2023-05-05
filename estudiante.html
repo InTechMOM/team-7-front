@@ -3,95 +3,92 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Entorno Estudiante</title>
+	<title>Estudiante</title>
     <link rel="icon" type="image/x-icon" href="imagenes/Captura.PNG">
     <link rel="stylesheet" href="style.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap" rel="stylesheet">
+  <script src="script.js"></script>
 	
 </head>
+
 <body>
+
 	<header class="header">
 
   </header>
 
-  <div class="container">
+  <div class="container-colum">
     <div class="column">
-      
-      <div class="input-box">
-        <h3>Líder del proyecto</h3>
-        <input type="text" placeholder="EJ: Juan Gómez">
-      </div>
-      <div class="input-box">
-        <h3>Email líder del proyecto</h3>
-        <input type="text" placeholder="Ingresa tu texto aquí">
-      </div>
-      <div class="input-box">
-        <h3>Pegar URL</h3>
-        <input type="text" placeholder="Ingresa tu texto aquí">
-      </div>
+        <div class="input-box">
+          <h3>Líder del proyecto</h3>
+            <input type="text" placeholder="EJ: Juan Gómez">
+               </div>
+            <div class="input-box" onsubmit="return validarEmail()">
+              <h3>Email líder del proyecto</h3>
+                <input class="input-box-email" type="email" id="email" name="email" required minlength="4" maxlength="256" placeholder="Correo electrónico"> 
+                  </div>
+              <div class="input-box-tittle">
+                <h3>Pegar URL</h3>
+                  </div>
+
     </div>
     <div class="column">
-      
-      <div class="input-box">
-        <h3>Título del proyecto</h3>
-        <input type="text" placeholder="Ingresa tu texto aquí">
-      </div>
-      <div class="input-box">
-        <h3>Descripción del video</h3>
-        <input type="text" placeholder="Ingresa tu texto aquí">
-      </div>
-
-
-
-      
+        <div class="input-box">
+          <h3>Título del proyecto</h3>
+            <input type="text" placeholder="EJ: El Universo">
+              </div>
+                <div class="input-box">
+                  <h3>Descripción del video</h3>
+                    <div class="container-textarea">
+                      <textarea class="textinput" placeholder="Escribe aquí" rows="8" cols="40"></textarea>
+                        </div>
+                         </div>
+                           <div class="input-box-url">
+                            <input type="text" placeholder="URL">
+                              </div>
     </div>
 
 
     <div class="column">
       <h3>Ver Calificaciones</h3>
-
-
-      <div class="input-box-select">
-        <select id="proyecto-estudiante">
+        <div class="input-box-select">
+          <select id="proyecto-estudiante">
           <option value="proyecto1">Proyecto 1</option>
           <option value="proyecto2">Proyecto 2</option>
           <option value="proyecto3">Proyecto 3</option>
-        </select>
-      </div>
+          </select>
+        </div>
       
-      
-      <div class="line">
-        <p>Colaboración</p>
-        <div class="circle-estudiante">100%</div>
-      </div>
-      <div class="line">
-        <p>Comunicación</p>
-        <div class="circle-estudiante">40%</div>
-        
-      </div>
-      <div class="line">
-        <p>Pensamiento Crítico</p>
-        <div class="circle-estudiante">80%</div>
-        
-      </div>
-      <div class="line">
-        <p>Creatividad</p>
-        <div class="circle-estudiante">60%</div>
-        
-      </div>
+    <div class="container-circle-estudiante">
+        <div class="line">
+          <p>Comunicación</p>
+           <div class="circle-2" data-index="100%">100%</div>
+             </div>
+              <div class="line">
+               <p>Colaboración</p>
+               <div class="circle-2" data-index="40%">40%</div>
+                 </div>
+                  <div class="line">
+                   <p>Pensamiento Crítico</p>
+                    <div class="circle-2" data-index="80%">80%</div>
+                      </div>
+                        <div class="line">
+                          <p>Creatividad</p>
+                            <div class="circle-2" data-index="60%">60%</div>
+                              </div>
+                            </div>
     </div>
   </div>
   
   <div class="btn-container">
-    <button class="btn">GUARDAR</button>
+    <button class="btn">ENVIAR</button>
     <button class="btn">SALIR</button>
-</div>
+  </div>
 
 
 </body>
 
-<script src="script.js"></script>
         
 </html>
