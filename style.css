@@ -5,7 +5,7 @@
 	}
 
 
-/*LOGIN*/
+/* PANTALLA LOGIN*/
 
 /*encabezado imagen Edvisto*/
 .header {
@@ -33,6 +33,14 @@ body {
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 	}
 
+
+/*cuadro del correo y los dos checkbox*/
+#login-form {
+	display: flex;
+	flex-direction: column;
+	margin-top: 0.5rem;
+	}
+
 /*h1 Iniciar sesión*/
 .login-title {
 	margin:auto;
@@ -48,32 +56,25 @@ body {
 	}
 
 /*cuadro del correo electrónico*/
-.form-input {
+#login-form #email {
 	margin: auto;
+	margin-bottom: 0.5rem;
 	width: 70%;
 	text-align: center;
 	padding: 0.5rem;
-	margin-bottom: 1.5rem;
 	border: 3px solid #000000;
 	border-radius: 3px;
 	}
 
-/*cuadro del correo y los dos checkbox*/
-.login-form {
-	display: flex;
-	flex-direction: column;
-	margin-top: 0.5rem;
-	}
 
 /*labels*/
 .form-label {
 	display: block;
 	align-items: center;
-	margin-bottom: 1.5rem;	
 	}
 
 /*manito para el checked*/
-.form-label input {
+#role-student, #role-teacher{
 	margin-right: 1.5rem ;
 	cursor: pointer;
 	}
@@ -90,7 +91,7 @@ label.form-label {
 	}	
 
 /*Propiedades del botón ingresar*/
-.form-button {
+#login-btn {
 	margin:auto;
 	margin-top: 0.5rem;
 	margin-bottom: 1.5rem;
@@ -106,7 +107,7 @@ label.form-label {
 	}
 
 /*Hover del botón*/
-.form-button:hover {
+#login-btn:hover {
 	background-color: #86E4D4;
 	}
 
@@ -116,7 +117,7 @@ label.form-label {
 
 
 
-/*DOCENTE*/
+/*PANTALLA DOCENTE*/
 
 /* Estilos base para el contenedor y los elementos del select */
 .select-container {
@@ -161,7 +162,7 @@ label.form-label {
 	
 	}
 
-  /*URL*/
+  /*url que califica el docente*/
   
 /* Estilos base para el contenedor y los elementos del label y enlace */
 
@@ -338,14 +339,14 @@ label.form-label {
 
 
 
-/*ESTUDIANTE*/
+/*PANTALLA CARGUE DE VIDEO ESTUDIANTE */
 
 /*input para cargar el video*/
 
 .container-colum {
 	display: flex;
 	justify-content: center;
-	margin: 100px;
+	margin-top: 40px;
 	}
   
 .column {
@@ -484,99 +485,3 @@ input[type="url"] {
 	margin-top: 4px;
 	padding: 4px;
   }
-
- 
-
-
-
-  /*pantalla 1 estudiante reestructuración*/
-
-.form-estudiante {
-	display: flex;
-	justify-content: center;
-  }
-  
-.column-estudiante1 {
-	margin: 0 10px;
-	text-align: center;
-  }
-  
-.column-estudiante1 h2 {
-	font-size: 24px;
-	margin-top: 30px;
-	margin-bottom: 30px;
-	color: rgb(8,12,92);
-  }
-  
-.column-estudiante1 h3 {
-	font-size: 14px;
-	margin-bottom: 20px;
-	padding: 7px;
-	height: 20px;
-	
-  }
-    
-.input-box-estudiante1 {
-	margin-bottom: 20px;
-	text-align: center;
-  }
-  
-.input-box-estudiante1 input[type="text"],
-.input-box-estudiante1 input[type="email"],
-.input-box-estudiante1 input[type="url"],
-.input-box-estudiante1 textarea {
-	width: 100%;
-	padding: 10px;
-
-  }
-    
-img {
-	max-width: 90%;
-	height: auto;
-	}
-   
-.textarea-estudiante1 {
-	width: 100%;
-	font-size: 15px;
-	background-color: rgb(224, 217, 217); /* Cambia el color de fondo */
-	color: #333; /* Cambia el color de texto */
-	border: 1px solid rgba(217, 217, 217, 0.46);;
-	border-radius: 5px;
-	resize: vertical; /* Permite redimensionar verticalmente */
-	min-height: 20px; /* Altura mínima */
-	max-height: 200px; /* Altura máxima */
-	overflow-y: auto; /* Añade scroll cuando se supera la altura máxima */
-  	}
-
-
-/*botón estudiante*/
-  
-.btn-estudiante1 {
-	position: relative;
-	margin-top: 50px;
-	bottom: 10px;
-	right: 20px;
-	margin-left: 28%;
-		
-  	}
-  
-.btn1 {
-	display: inline-block;
-	background-color: #24C4AC;
-	font-family: 'Montserrat', sans-serif;
-	color: #000;
-	padding: 8px 10px;
-	text-align: center;
-	text-decoration: none;
-	font-size: 16px;
-	margin: 5px;
-	border: none;
-	border-radius: 5px;
-	cursor: pointer;
-	}
-
-.btn1:hover {
-	color: rgb(162, 250, 250) !important;
-	box-shadow: 0 4px 16px rgba(49, 138, 172, 1);
-	transition: all 0.2s ease;
- 	}

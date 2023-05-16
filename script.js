@@ -47,3 +47,26 @@ function validarEmail() {
 }
 
 
+
+
+
+
+
+/*FUNCIÓN LOGIN a pantalla docente y estudiante*/
+
+document.getElementById('login-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  // Obtiene los valores del formulario
+  var email = document.getElementById('email').value;
+  var role = document.querySelector('input[name="role"]:checked').value;
+
+  // Verifica el correo y rol y redirige
+  if (email === 'anavergara05@gmail.com' && role === 'estudiante') {
+    window.location.href = './estudiantepantalla1.html'; // Redirige a la página del estudiante
+  } else if (email === 'anavergara05@gmail.com' && role === 'docente') {
+    window.location.href = 'docente.html'; // Redirige a la página del docente
+  } else {
+    alert('El correo o el rol son incorrectos');
+  }
+});

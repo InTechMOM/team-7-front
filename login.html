@@ -17,15 +17,26 @@
 
 	<div class="login-container">
 		<h1 class="login-title">Iniciar sesión</h1>
-		<form class="login-form" onsubmit="return validarEmail()">
-			<input class="form-input" type="email" id="email" name="email" required minlength="4" maxlength="256" placeholder="Correo electrónico">
-			<label class="form-label"><input type="radio" checked="checked" name="radio"><span class="checkmark"></span>Soy profesor</label>
-			<label class="form-label"><input type="radio" name="radio"><span class="checkmark"></span>Soy estudiante</label>
-			<button type="submit" class="form-button">Ingresar</button>
-		</form>
-	</div>
+
+		<form id="login-form" onsubmit="return validarEmail()">
+		  
+		  <input type="email" id="email" name="email" required minlength="4" maxlength="256" placeholder="Correo electrónico"><br>
+
+		  <label for="role-student" class="form-label">
+		  <input type="radio" class="checkmark" id="role-student" name="role" value="estudiante" required checked="checked"><span class="checkmark"></span>Soy estudiante</label> 
+		  
+		  <label for="role-teacher" class="form-label">
+		  <input type="radio" class="checkmark" id="role-teacher" name="role" value="docente" required><span class="checkmark"></span>Soy profesor</label>
+		  
 	
+		  <button type="submit" id="login-btn">Ingresar</button>
+		</form>
+	  </div>
+		
 	<script src="script.js"></script>
+
+
+
 
 </body>
 
