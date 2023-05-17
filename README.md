@@ -1,4 +1,4 @@
-Título del proyecto: PLATAFORM  ACADEMICA  EDVISTO
+Título del proyecto: PLATAFORMA  ACADEMICA  EDVISTO
 
 
 
