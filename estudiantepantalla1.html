@@ -6,16 +6,18 @@
 	<title>Estudiante - Ver Calificaciones</title>
     <link rel="icon" type="image/x-icon" href="imagenes/Captura.PNG">
     <link rel="stylesheet" href="style.css">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap" rel="stylesheet">
+	  <link rel="preconnect" href="https://fonts.googleapis.com">
+	  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap" rel="stylesheet">
   	
 </head>
 
 <body>
 
 	<header class="header">
-
+    <div class="btn-inicio">
+      <a href="login.html" class="btn-cerrar-sesion">Cerrar sesión</a>
+        </div>
   </header>
 
   <div class="container-colum">
@@ -24,44 +26,37 @@
           <h3>Líder del proyecto</h3>
             <input type="text" minlength="4" maxlength="80" placeholder="EJ: Juan Gómez">
                </div>
-            <div class="input-box" onsubmit="return validarEmail()">
-              <h3>Email líder del proyecto</h3>
-                <input class="input-box-email" type="email" id="email" name="email" minlength="4" maxlength="256" placeholder="Correo electrónico"> 
-                  </div>
-                    <div class="form-group-estudiante">
-                     <label for="input-url-estudiante">URL:</label>
-                      <input type="url" id="input-url" name="url" placeholder="Url aquí">
-                        </div>
-
+                 <div class="input-box" onsubmit="return validarEmail()">
+                   <h3>Email líder del proyecto</h3>
+                     <input class="input-box-email" type="email" id="email" name="email" minlength="4" maxlength="256" placeholder="Correo electrónico"> 
+                      </div>
+                        <div class="input-box" onsubmit="return validarEmail()">
+                         <h3>Email profesor</h3>
+                          <input class="input-box-email" type="email" id="email" name="email" minlength="4" maxlength="256" placeholder="Correo electrónico"> 
+                            </div>
+                              <div class="form-group-estudiante">
+                                <label for="input-url-estudiante">URL:</label>
+                                 <input type="url" id="input-url" name="url" placeholder="Url aquí">
+                                  </div>
     </div>
     <div class="column">
-        <div class="input-box">
-          <h3>TITULO DEL PROYECTO</h3>
-            <input type="text" minlength="4" maxlength="80" placeholder="EJ: El Universo">
-              </div>
+      <div class="input-box">
+        <h3>Título del proyecto</h3>
+          <input type="text" minlength="4" maxlength="80" placeholder="EJ: El Universo">
+            </div>
                 <div class="input-box">
                   <h3>Descripción del video</h3>
                     <div class="container-textarea">
-                      <textarea class="textinput" minlength="4" maxlength="500" placeholder="Escribe aquí" rows="8" cols="40"></textarea>
+                      <textarea class="textinput" minlength="4" maxlength="500" placeholder="Escribe aquí" rows="11" cols="40"></textarea>
                         </div>
                          </div>
 
     </div>
-
-
-    <div class="column">
-      <div class="input-box" onsubmit="return validarEmail()">
-        <h3>Email profesor</h3>
-          <input class="input-box-email" type="email" id="email" name="email" minlength="4" maxlength="256" placeholder="Correo electrónico"> 
-            </div>
-
-        
-    </div>
   </div>
-  
+    
   <div class="btn-container">
-    <button class="btn">ENVIAR</button>
-  </div>
+    <button type="submit" id="estudiante-btn" class="btn">GUARDAR</button>
+      </div>
 
   <script src="script.js"></script>
 

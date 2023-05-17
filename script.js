@@ -47,19 +47,14 @@ function validarEmail() {
 }
 
 
-
-
-
-
-
 /*FUNCIÓN LOGIN a pantalla docente y estudiante*/
 
 document.getElementById('login-form').addEventListener('submit', function(e) {
   e.preventDefault();
 
   // Obtiene los valores del formulario
-  var email = document.getElementById('email').value;
-  var role = document.querySelector('input[name="role"]:checked').value;
+  const email = document.getElementById('email').value;
+  const role = document.querySelector('input[name="role"]:checked').value;
 
   // Verifica el correo y rol y redirige
   if (email === 'anavergara05@gmail.com' && role === 'estudiante') {

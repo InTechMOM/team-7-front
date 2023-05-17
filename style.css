@@ -21,7 +21,7 @@ body {
 	background-color: #fff;
 	}
 
-/*cuadro del formulario*/
+/*cuadro del formulario login*/
 .login-container {
 	margin: auto;
 	margin-top: 2rem;
@@ -65,7 +65,6 @@ body {
 	border: 3px solid #000000;
 	border-radius: 3px;
 	}
-
 
 /*labels*/
 .form-label {
@@ -119,7 +118,38 @@ label.form-label {
 
 /*PANTALLA DOCENTE*/
 
-/* Estilos base para el contenedor y los elementos del select */
+/*Botones para regresar a la pantalla de LOGIN*/
+.btn-inicio {
+	position: relative;
+	margin-top: 5px;
+	bottom: 10px;
+	right: 20px;
+	margin-left: 75%;
+	}
+  
+.btn-cerrar-sesion {
+	display: inline-block;
+	background-color: #F5F5F5;
+	font-family: 'Montserrat', sans-serif;
+	color: #000;
+	padding: 8px 10px;
+	text-align: center;
+	text-decoration: none;
+	font-size: 16px;
+	margin: 5px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	}
+
+.btn-cerrar-sesion:hover {
+	color: #24C4AC !important;
+	box-shadow: 0 4px 16px rgba(49, 138, 172, 1);
+	transition: all 0.2s ease;
+ 	}
+
+/* estilos base para el contenedor y los elementos del SELECT */
+
 .select-container {
     display: flex;
 	padding: 3rem;
@@ -135,13 +165,13 @@ label.form-label {
 	padding: 0.5rem;
 	background-color: #D9D9D9;
 	border-radius: 0.25rem;
-
 	}
   
 /*select menú*/
 
 #select-menu {
     flex-grow: 1;
+	max-width: 60rem;
     padding: 0.5rem;
 	text-align: center;
     font-size: 1rem;
@@ -150,21 +180,19 @@ label.form-label {
     border-radius: 0.25rem;
   	}
 
-  /* Estilos para pantallas pequeñas */
+/* Estilos para pantallas pequeñas */
   @media (max-width: 767px) {
     .select-container label {
       margin-bottom: 0.5rem;
     }
-    
     #select-menu {
       font-size: 0.9rem;
     }
-	
 	}
 
-  /*url que califica el docente*/
+/*url que califica el docente*/
   
-/* Estilos base para el contenedor y los elementos del label y enlace */
+/* Estilos base para el contenedor y los elementos del label y URL */
 
 .url-container {
 	display: block;
@@ -221,16 +249,14 @@ label.form-label {
 	justify-content: center;
 	align-items: center;
 	margin-bottom: 20px;
-	
- 	}
+	}
 
 .progress-bar-2 {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	margin-bottom: 20px;
-	
- 	}
+	}
 
 .progress-bar-3 {
 	display: flex;
@@ -238,16 +264,14 @@ label.form-label {
 	align-items: center;
 	margin-bottom: 20px;
 	margin-right: 4.5rem;
-	
- 	}
+	}
   
 .progress-bar-4 {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	margin-bottom: 20px;
-	
- 	}
+	}
 
 .circle-1, .circle-2, .circle-3, .circle-4  {
 	width: 30px;
@@ -268,7 +292,6 @@ label.form-label {
 	font-size: 10px;
 	background-color: #ff0000;
 	color: #000;
-	
 	}
   
   [data-index="40%"] {
@@ -295,22 +318,21 @@ label.form-label {
 	color: #000;
   	}
   
-  .active {
+.active {
 	border-width: 3px;
 	border-color: #000;
 	color: #000;
  	}
 
-  /* Botón Guardar y Salir */
+/* estilo botón GUARDAR*/
 
 .btn-container {
 	position: relative;
-	margin-top: 50px;
+	margin-top: 5px;
 	bottom: 10px;
 	right: 20px;
-	margin-left: 80%;
-		
-  	}
+	margin-left: 75%;
+	}
   
 .btn {
 	display: inline-block;
@@ -337,16 +359,14 @@ label.form-label {
 
 
 
-
-
-/*PANTALLA CARGUE DE VIDEO ESTUDIANTE */
+/*1a PANTALLA CARGUE DE VIDEO ESTUDIANTE */
 
 /*input para cargar el video*/
 
 .container-colum {
 	display: flex;
 	justify-content: center;
-	margin-top: 40px;
+	margin-top: 10px;
 	}
   
 .column {
@@ -368,9 +388,9 @@ h3 {
 	align-items: center;
 	font-size: 18px;
 	height: 30px;
-	margin-bottom: 10px;
+	margin-bottom: 5px;
 	background: #24C4AC;
-	border-radius: 20px;
+	border-radius: 15px;
 	padding: 5px;
   	}
 
@@ -412,11 +432,6 @@ input::placeholder {
 
 /*campo de url del estudiante*/
 
-.form-group.estudiante {
-	text-align: center;
-	margin-bottom: 10px;
-	}
-	  
 .form-group-estudiante label {
 	display: block;
 	margin-bottom: 10px;
@@ -428,7 +443,7 @@ input::placeholder {
 input[type="url"] {
 	display: block;
 	margin: 0 auto;
-	padding: 4px;
+	padding: 5px;
 	border-radius: 5px;
 	border: 1px solid #ccc;
 	font-size: 12px;
@@ -455,7 +470,7 @@ input[type="url"] {
 	border-radius: 5px;
 	resize: vertical; /* Permite redimensionar verticalmente */
 	min-height: 20px; /* Altura mínima */
-	max-height: 115px; /* Altura máxima */
+	max-height: 300px; /* Altura máxima */
 	overflow-y: auto; /* Añade scroll cuando se supera la altura máxima */
 	}
 
@@ -463,6 +478,11 @@ input[type="url"] {
 	text-align: center;
 	line-height: 100px;/* Centrado vertical */
 	}
+
+
+
+
+/*2a PANTALLA CARGUE DE VIDEO ESTUDIANTE - Estilos adicionales */
 
 /*Círculos calificaciones del estudiante*/
 
