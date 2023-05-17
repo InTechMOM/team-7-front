@@ -58,7 +58,7 @@ body {
 /*cuadro del correo electrónico*/
 #login-form #email {
 	margin: auto;
-	margin-bottom: 0.3rem;
+	margin-bottom: 9px;
 	width: 70%;
 	text-align: center;
 	padding: 0.5rem;
