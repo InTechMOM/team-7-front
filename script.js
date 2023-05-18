@@ -51,10 +51,54 @@ function validarEmail() {
 
 document.getElementById('login-form').addEventListener('submit', function(e) {
   e.preventDefault();
+  
+  // Obtiene los valores del formulario
+  var email = document.getElementById('email').value;
+  var role = document.querySelector('input[name="role"]:checked');
+
+// Verifica el correo y rol y redirige
+if (isValidEmail(email) && role) {
+  if (role.value === 'estudiante') {
+    window.location.href = './estudiantepantalla1.html'; // Redirige a la página del estudiante
+  } else if (role.value === 'docente') {
+    window.location.href = 'docente.html'; // Redirige a la página del docente
+  }
+} else {
+  alert('Ingrese un correo válido y seleccione un rol');
+}
+});
+
+function isValidEmail(email) {
+// Expresión regular para verificar el formato de correo electrónico
+var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+return emailRegex.test(email);
+}
+
+
+
+
+
+
+
+
+  /* Verifica el correo y rol y redirige
+  if (email === 'anavergara05@gmail.com' && role === 'estudiante') {
+    window.location.href = './estudiantepantalla1.html'; // Redirige a la página del estudiante
+  } else if (email === 'anavergara05@gmail.com' && role === 'docente') {
+    window.location.href = 'docente.html'; // Redirige a la página del docente
+  } else {
+    alert('El correo o el rol son incorrectos');
+  }
+});
+
+/*document.getElementById('login-btn').addEventListener('onclick', function(e) {
+  e.preventDefault();
 
   // Obtiene los valores del formulario
-  const email = document.getElementById('email').value;
-  const role = document.querySelector('input[name="role"]:checked').value;
+  var email = document.getElementById('email').value;
+  var role = document.querySelector('input[name="role"]:checked').value;
+  
+  const loginResponse = fetch('https://team-x-back.onrender.com/api/users', { method: 'GET'}).then((response) =>  response.json()).then((response) => console.log(response))
 
   // Verifica el correo y rol y redirige
   if (email === 'anavergara05@gmail.com' && role === 'estudiante') {
@@ -65,5 +109,5 @@ document.getElementById('login-form').addEventListener('submit', function(e) {
     alert('El correo o el rol son incorrectos');
   }
 });
-
+*/
 
