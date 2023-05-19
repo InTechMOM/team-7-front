@@ -90,7 +90,7 @@ label.form-label {
 	}	
 
 /*Propiedades del botón ingresar*/
-#login-btn {
+#submit {
 	margin:auto;
 	margin-top: 0.5rem;
 	margin-bottom: 1.5rem;
@@ -106,7 +106,7 @@ label.form-label {
 	}
 
 /*Hover del botón*/
-#login-btn:hover {
+#submit:hover {
 	background-color: #86E4D4;
 	}
 

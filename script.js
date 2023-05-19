@@ -36,6 +36,8 @@ circles4.forEach((circle) => {
 
 
 
+
+
 /*CUADRO DE CORREO: Límitar extensión de correo y caracteres del correo*/
 
 function validarEmail() {
@@ -47,67 +49,75 @@ function validarEmail() {
 }
 
 
-/*FUNCIÓN LOGIN a pantalla docente y estudiante*/
 
-document.getElementById('login-form').addEventListener('submit', function(e) {
+
+
+/*FUNCIÓN LOGIN a pantalla docente y estudiante
+Objetivo: Que cuando ingrese un correo electrónico cualquiera y de clic en un rol me dirija a la pantalla correspondiente*/
+
+document.getElementById('login-form').addEventListener('submit',function(e) {
   e.preventDefault();
   
-  // Obtiene los valores del formulario
-  var email = document.getElementById('email').value;
-  var role = document.querySelector('input[name="role"]:checked');
+  const email = document.getElementById('email').value; /* Obtiene los valores del formulario*/
+  const role = document.querySelector('input[name="role"]:checked');
 
-// Verifica el correo y rol y redirige
-if (isValidEmail(email) && role) {
+  if (isValidEmail(email) && role) {      /*verifica el correo y rol y redirige*/
   if (role.value === 'estudiante') {
-    window.location.href = './estudiantepantalla1.html'; // Redirige a la página del estudiante
+    window.location.href = './estudiantepantalla1.html'; //redirige a la página del estudiante
   } else if (role.value === 'docente') {
-    window.location.href = 'docente.html'; // Redirige a la página del docente
+    window.location.href = 'docente.html'; //redirige a la página del docente
   }
-} else {
+  } else {
   alert('Ingrese un correo válido y seleccione un rol');
-}
-});
-
-function isValidEmail(email) {
-// Expresión regular para verificar el formato de correo electrónico
-var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-return emailRegex.test(email);
-}
-
-
-
-
-
-
-
-
-  /* Verifica el correo y rol y redirige
-  if (email === 'anavergara05@gmail.com' && role === 'estudiante') {
-    window.location.href = './estudiantepantalla1.html'; // Redirige a la página del estudiante
-  } else if (email === 'anavergara05@gmail.com' && role === 'docente') {
-    window.location.href = 'docente.html'; // Redirige a la página del docente
-  } else {
-    alert('El correo o el rol son incorrectos');
   }
-});
+  });
 
-/*document.getElementById('login-btn').addEventListener('onclick', function(e) {
-  e.preventDefault();
-
-  // Obtiene los valores del formulario
-  var email = document.getElementById('email').value;
-  var role = document.querySelector('input[name="role"]:checked').value;
-  
-  const loginResponse = fetch('https://team-x-back.onrender.com/api/users', { method: 'GET'}).then((response) =>  response.json()).then((response) => console.log(response))
-
-  // Verifica el correo y rol y redirige
-  if (email === 'anavergara05@gmail.com' && role === 'estudiante') {
-    window.location.href = './estudiantepantalla1.html'; // Redirige a la página del estudiante
-  } else if (email === 'anavergara05@gmail.com' && role === 'docente') {
-    window.location.href = 'docente.html'; // Redirige a la página del docente
-  } else {
-    alert('El correo o el rol son incorrectos');
+function isValidEmail(email) {     /*para verificar el formato de correo electrónico*/
+  var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
   }
-});
-*/
+
+
+
+
+
+/* Para vincular frontend y backend en LOGIN Método: GET
+Objetivo: Que me permita acceder a las pantallas (estudiante/docente) de acuerdo con el correo y el rol que se encuentran
+en la base de datos si no está en la BD o se coloca un rol que no corresponde me genere un mensaje: usuario no válido */
+
+
+
+
+/* Para vincular frontend y backend en ESTUDIANTE Método: POST
+Objetivo: Que me permita enviar los datos ingresados al formulario y se envíe la información a la BD al dar clic en guardar*/
+
+
+
+
+/* Para vincular frontend y backend en DOCENTE Método: GET y POST
+Objetivo: Que me muestre los estudiantes y la url que están pendientes por calificar para luego colocar una nota por habilidad
+y al dar clic en guardar se envié la información de esas calificaciones a la base de datos */
+
+fetch('https://team-7-back.onrender.com/api/users', {
+    method: 'POST',
+    headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*'
+    },
+    body: JSON.stringify({ "id": 78912 })
+})
+   .then(response => response.json())
+   .then(response => console.log(JSON.stringify(response)))
+
+
+
+
+
+
+
+
+
+
+
 
