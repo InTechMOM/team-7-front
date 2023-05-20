@@ -20,6 +20,8 @@
         </div>
   </header>
 
+  
+  <div>
   <div class="container-colum">
     <div class="column">
         <div class="input-box">
@@ -55,9 +57,10 @@
     
   </div>
     
-  <div class="btn-container">
-    <button type="submit" id="estudiante-btn" class="btn">GUARDAR</button>
-      </div>
+  <form class="btn-container" onsubmit="return confirmarEnvio()">
+    <button type="submit" value="Enviar" id="estudiante-btn" class="btn">ENVIAR</button>
+  </form>
+  
 
   <script src="script.js"></script>
 

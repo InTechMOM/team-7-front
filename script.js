@@ -1,6 +1,5 @@
 /*DOCENTE:interactividad de los círculos*/
 
-
 const circles1 = document.querySelectorAll(".circle-1");
 const circles2 = document.querySelectorAll(".circle-2");
 const circles3 = document.querySelectorAll(".circle-3");
@@ -80,23 +79,45 @@ function isValidEmail(email) {     /*para verificar el formato de correo electr�
 
 
 
+//ALERTA DESEA ENVIAR LA INFORMACIÓN en pantalla y estudiante botón enviar y guardar*/ 
 
-/* Para vincular frontend y backend en LOGIN Método: GET
+function confirmarEnvio() {
+  return confirm("¿Estás seguro de que deseas enviar el formulario?");
+}
+
+
+
+
+//Vinculación frontend y backend
+
+/* 1. Para vincular frontend y backend en LOGIN Método: GET
 Objetivo: Que me permita acceder a las pantallas (estudiante/docente) de acuerdo con el correo y el rol que se encuentran
-en la base de datos si no está en la BD o se coloca un rol que no corresponde me genere un mensaje: usuario no válido */
+en la base de datos si no está en la BD o se coloca un rol que no corresponde me genere un mensaje: usuario no válido
+End point: GET – Users */
 
 
+fetch("https://team-7-back.onrender.com/api/users", { // traer informacion
+  method: "GET",
+  headers: {
+    "Accept":"application/json", // tipo de dato json siempre debe ir
+    "Content-Type": "application/json",
+    'Access-Control-Allow-Origin': '*' // para quitar error corse- julio ruiz
+  },
+})
+  .then((response) => response.json()) // convierte datos en json
+  .then((response) => console.log(JSON.stringify(response))) // imprime en consola la respuesta en formato json
+  .catch((error) => console.log(error)); // imprime en consola el error si falla algo
 
 
-/* Para vincular frontend y backend en ESTUDIANTE Método: POST
-Objetivo: Que me permita enviar los datos ingresados al formulario y se envíe la información a la BD al dar clic en guardar*/
+/* 2. Para vincular frontend y backend en ESTUDIANTE Método: POST
+Objetivo: Que me permita enviar los datos ingresados al formulario y se envíe la información a la BD al dar clic en guardar
+End Point: GET – Users /  POST - Videos */
 
 
-
-
-/* Para vincular frontend y backend en DOCENTE Método: GET y POST
+/* 3. Para vincular frontend y backend en DOCENTE Método: GET y POST
 Objetivo: Que me muestre los estudiantes y la url que están pendientes por calificar para luego colocar una nota por habilidad
-y al dar clic en guardar se envié la información de esas calificaciones a la base de datos */
+y al dar clic en guardar se envié la información de esas calificaciones a la base de datos 
+End point: GET- video  /   POST-Calificaciones    */
 
 fetch('https://team-7-back.onrender.com/api/users', {
     method: 'POST',
@@ -109,6 +130,46 @@ fetch('https://team-7-back.onrender.com/api/users', {
 })
    .then(response => response.json())
    .then(response => console.log(JSON.stringify(response)))
+   .catch((error) => console.log(error)); // imprime en consola el error si falla algo
+
+
+
+
+
+   
+   
+//validación especial:
+
+// fetch("https://team-7-back.onrender.com/api/users", {
+//   method: "POST",
+//   headers: {
+//     Accept: "application/json",
+//     "Content-Type": "application/json",
+//   },
+//   body: JSON.stringify({ id: 78912 }),
+// })
+//   .then((response) => response.json())
+//   .then((response) => console.log(JSON.stringify(response)));
+
+
+/*julio ruiz: 
+
+fetch("https://team-7-back.onrender.com/api/users", { // traer informacion
+method: "GET",
+headers: {
+  Accept: "application/json", // tipo de dato json siempre debe ir
+  "Content-Type": "application/json",
+  'Access-Control-Allow-Origin': '*' // para quitar error corse- julio ruiz
+},
+})
+.then((response) => response.json()) // convierte datos en json
+.then((response) => console.log(JSON.stringify(response))) // imprime en consola la respuesta en formato json
+.catch((error) => console.log(error)); // imprime en consola el error si falla algo */
+
+
+
+
+
 
 
 
