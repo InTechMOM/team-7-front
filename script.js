@@ -80,7 +80,7 @@ if (loginForm != null) {
     .then((response) => {console.log(JSON.stringify(response))
     if (response.email != null){
       if (response.rol === 'student') {
-        window.location.href = './estudiantepantalla1.html?email=' + email; //redirige a la página del estudiante
+        window.location.href = './estudiante.html?email=' + email; //redirige a la página del estudiante
       } else if (response.rol === 'teacher') {
         window.location.href = 'docente.html'; //redirige a la página del docente
       }
