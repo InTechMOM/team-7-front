@@ -54,27 +54,98 @@ function validarEmail() {
 /*FUNCIÓN LOGIN a pantalla docente y estudiante
 Objetivo: Que cuando ingrese un correo electrónico cualquiera y de clic en un rol me dirija a la pantalla correspondiente*/
 
-document.getElementById('login-form').addEventListener('submit',function(e) {
-  e.preventDefault();
+let loginForm = document.getElementById('login-form')
+if (loginForm != null) {
+  loginForm.addEventListener('submit',function(e) {
+    e.preventDefault();
+    
+    const email = document.getElementById('email').value; /* Obtiene los valores del formulario*/
+    const role = document.querySelector('input[name="role"]:checked');
   
-  const email = document.getElementById('email').value; /* Obtiene los valores del formulario*/
-  const role = document.querySelector('input[name="role"]:checked');
+    if (isValidEmail(email) && role) {      /*verifica el correo y rol y redirige*/
+  
+    fetch("https://team-7-back-demo.onrender.com/api/users/"+email, { // traer informacion
+    method: "GET",
+    headers: {
+      "Accept":"application/json", // tipo de dato json siempre debe ir
+      "Content-Type": "application/json",
+      'Access-Control-Allow-Origin': '*' // para quitar error corse- julio ruiz
+    },
+  })
+    .then((response) => response.json()) // convierte datos en json
+    .then((response) => {console.log(JSON.stringify(response))
+    if (response.email != null){
+      if (response.rol === 'student') {
+        window.location.href = './estudiantepantalla1.html?email=' + email; //redirige a la página del estudiante
+      } else if (response.rol === 'teacher') {
+        window.location.href = 'docente.html'; //redirige a la página del docente
+      }
+    } else {
+      alert('Ingrese un correo válido y seleccione un rol')
+    }
+  }
+    ) // imprime en consola la respuesta en formato json
+    .catch((error) => alert('Ingrese un correo válido y seleccione un rol')); // imprime en consola el error si falla algo
+  
+    } else {
+    alert('Ingrese un correo válido y seleccione un rol');
+    }
+    });
+}
 
-  if (isValidEmail(email) && role) {      /*verifica el correo y rol y redirige*/
-  if (role.value === 'estudiante') {
-    window.location.href = './estudiantepantalla1.html'; //redirige a la página del estudiante
-  } else if (role.value === 'docente') {
-    window.location.href = 'docente.html'; //redirige a la página del docente
+function getUrlParams(urlOrQueryString) {
+  if ((i = urlOrQueryString.indexOf('?')) >= 0) {
+    const queryString = urlOrQueryString.substring(i+1);
+    if (queryString) {
+      return _mapUrlParams(queryString);
+    } 
   }
-  } else {
-  alert('Ingrese un correo válido y seleccione un rol');
+  return {};
+}
+
+function _mapUrlParams(queryString) {
+  return queryString    
+    .split('&') 
+    .map(function(keyValueString) { return keyValueString.split('=') })
+    .reduce(function(urlParams, [key, value]) {
+      if (Number.isInteger(parseInt(value)) && parseInt(value) == value) {
+        urlParams[key] = parseInt(value);
+      } else {
+        urlParams[key] = decodeURI(value);
+      }
+      return urlParams;
+    }, {});
+}
+
+let nameLeader = document.getElementById('name-leader')
+if (nameLeader != null) {
+  var param = getUrlParams(parent.document.URL);
+
+  fetch("https://team-7-back-demo.onrender.com/api/users/" + param.email, { // traer informacion
+  method: "GET",
+  headers: {
+    "Accept":"application/json", // tipo de dato json siempre debe ir
+    "Content-Type": "application/json",
+    'Access-Control-Allow-Origin': '*' // para quitar error corse- julio ruiz
+  },
+})
+  .then((response) => response.json()) // convierte datos en json
+  .then((response) => {
+  if (response.email != null){
+    nameLeader.value = response.nameFull
+    document.getElementById('email-student').value = response.email
   }
-  });
+}
+  ) // imprime en consola la respuesta en formato json
+  .catch((error) => alert('Ingrese un correo válido y seleccione un rol')); // imprime en consola el error si falla algo
+
+  }
 
 function isValidEmail(email) {     /*para verificar el formato de correo electrónico*/
   var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return emailRegex.test(email);
   }
+
 
 
 
@@ -95,34 +166,17 @@ Objetivo: Que me permita acceder a las pantallas (estudiante/docente) de acuerdo
 en la base de datos si no está en la BD o se coloca un rol que no corresponde me genere un mensaje: usuario no válido
 End point: GET – Users */
 
-const apiUrl = 'https://team-7-back-demo.onrender.com/api/users';
-
-document.getElementById('loginForm').addEventListener('submit', function(event) {
-  event.preventDefault(); // Evita que el formulario se envíe automáticamente
-
-  const email = document.getElementById('email').value;
-  const role = document.getElementById('role').value;
-
-  // Realiza la solicitud a la API
-  fetch(apiUrl)
-    .then(response => response.json())
-    .then(data => {
-      // Aquí puedes manejar los datos recibidos de la API
-      // Por ejemplo, verificar si el correo electrónico y el rol coinciden
-      const user = data.find(user => user.email === email && user.role === role);
-
-      if (user) {
-        // Usuario válido, realizar alguna acción (redireccionar, mostrar un mensaje, etc.)
-        console.log('Inicio de sesión exitoso');
-      } else {
-        // Usuario no válido, mostrar un mensaje de error
-        console.log('Credenciales incorrectas');
-      }
-    })
-    .catch(error => {
-      console.log('Error al realizar la solicitud:', error);
-    });
-});
+fetch("https://team-7-back-demo.onrender.com/api/users", { // traer informacion
+  method: "GET",
+  headers: {
+    "Accept":"application/json", // tipo de dato json siempre debe ir
+    "Content-Type": "application/json",
+    'Access-Control-Allow-Origin': '*' // para quitar error corse- julio ruiz
+  },
+})
+  .then((response) => response.json()) // convierte datos en json
+  .then((response) => console.log(JSON.stringify(response))) // imprime en consola la respuesta en formato json
+  .catch((error) => console.log(error)); // imprime en consola el error si falla algo
 
 
 
@@ -136,18 +190,6 @@ Objetivo: Que me muestre los estudiantes y la url que están pendientes por cali
 y al dar clic en guardar se envié la información de esas calificaciones a la base de datos 
 End point: GET- video  /   POST-Calificaciones    */
 
-fetch('*', {
-    method: 'POST',
-    headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*'
-    },
-    body: JSON.stringify({ "id": 78912 })
-})
-   .then(response => response.json())
-   .then(response => console.log(JSON.stringify(response)))
-   .catch((error) => console.log(error)); // imprime en consola el error si falla algo
 
 
 
