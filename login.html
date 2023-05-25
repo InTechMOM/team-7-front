@@ -13,20 +13,21 @@
 </head>
 <body>
 	<header class="header">
+		<h1 class="title-bienvenida">BIENVENIDO (A)</h1>
 	</header>
 
 	<div class="login-container">
-		<h1 class="login-title">Iniciar sesión</h1>
+		<h1 class="login-title">Iniciar Sesión</h1>
 
-		<form id="login-form" onsubmit="return validarEmail()">
+		<form id="login-form">
 		  
-		  <input type="email" id="email" name="email" required minlength="4" maxlength="256" placeholder="Correo electrónico"><br>
+		  <input type="email" id="email" name="email" required minlength="4" maxlength="256" placeholder="Ingresa tu correo electrónico aquí"><br>
 
 		  <label for="role-student" class="form-label">
-		  <input type="radio" class="checkmark" id="role-student" name="role" value="estudiante" required checked="checked"><span class="checkmark"></span>Soy estudiante</label> 
+		  <input type="radio" class="checkmark" id="role-student" name="role" value="estudiante" required checked="checked"><span class="checkmark"></span>Soy Estudiante</label> 
 		  
 		  <label for="role-teacher" class="form-label">
-		  <input type="radio" class="checkmark" id="role-teacher" name="role" value="docente" required><span class="checkmark"></span>Soy profesor</label>
+		  <input type="radio" class="checkmark" id="role-teacher" name="role" value="docente" required><span class="checkmark"></span>Soy Profesor</label>
 		  
 	
 		  <button type="submit" id="submit">Ingresar</button>

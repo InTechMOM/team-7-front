@@ -95,18 +95,35 @@ Objetivo: Que me permita acceder a las pantallas (estudiante/docente) de acuerdo
 en la base de datos si no está en la BD o se coloca un rol que no corresponde me genere un mensaje: usuario no válido
 End point: GET – Users */
 
+const apiUrl = 'https://team-7-back-demo.onrender.com/api/users';
 
-fetch("https://team-7-back.onrender.com/api/users", { // traer informacion
-  method: "GET",
-  headers: {
-    "Accept":"application/json", // tipo de dato json siempre debe ir
-    "Content-Type": "application/json",
-    'Access-Control-Allow-Origin': '*' // para quitar error corse- julio ruiz
-  },
-})
-  .then((response) => response.json()) // convierte datos en json
-  .then((response) => console.log(JSON.stringify(response))) // imprime en consola la respuesta en formato json
-  .catch((error) => console.log(error)); // imprime en consola el error si falla algo
+document.getElementById('loginForm').addEventListener('submit', function(event) {
+  event.preventDefault(); // Evita que el formulario se envíe automáticamente
+
+  const email = document.getElementById('email').value;
+  const role = document.getElementById('role').value;
+
+  // Realiza la solicitud a la API
+  fetch(apiUrl)
+    .then(response => response.json())
+    .then(data => {
+      // Aquí puedes manejar los datos recibidos de la API
+      // Por ejemplo, verificar si el correo electrónico y el rol coinciden
+      const user = data.find(user => user.email === email && user.role === role);
+
+      if (user) {
+        // Usuario válido, realizar alguna acción (redireccionar, mostrar un mensaje, etc.)
+        console.log('Inicio de sesión exitoso');
+      } else {
+        // Usuario no válido, mostrar un mensaje de error
+        console.log('Credenciales incorrectas');
+      }
+    })
+    .catch(error => {
+      console.log('Error al realizar la solicitud:', error);
+    });
+});
+
 
 
 /* 2. Para vincular frontend y backend en ESTUDIANTE Método: POST
@@ -119,7 +136,7 @@ Objetivo: Que me muestre los estudiantes y la url que están pendientes por cali
 y al dar clic en guardar se envié la información de esas calificaciones a la base de datos 
 End point: GET- video  /   POST-Calificaciones    */
 
-fetch('https://team-7-back.onrender.com/api/users', {
+fetch('*', {
     method: 'POST',
     headers: {
         'Accept': 'application/json',
@@ -152,7 +169,7 @@ fetch('https://team-7-back.onrender.com/api/users', {
 //   .then((response) => console.log(JSON.stringify(response)));
 
 
-/*julio ruiz: 
+/*JULIO RUIZ: 
 
 fetch("https://team-7-back.onrender.com/api/users", { // traer informacion
 method: "GET",
@@ -166,10 +183,31 @@ headers: {
 .then((response) => console.log(JSON.stringify(response))) // imprime en consola la respuesta en formato json
 .catch((error) => console.log(error)); // imprime en consola el error si falla algo */
 
+/*KAREN E
+
+const loginResponse = fetch('https://team-7-back.onrender.com/api/users', 
+{ method: 'GET'}).then((response) =>  
+response.json()).then((response) => 
+console.log(response))
 
 
 
 
+/* Ana último 24 de mayo de 2023
+
+fetch("https://team-7-back.onrender.com/api/users", { // traer informacion
+  method: "GET",
+  headers: {
+    "Accept":"application/json", // tipo de dato json siempre debe ir
+    "Content-Type": "application/json",
+    'Access-Control-Allow-Origin': '*' // para quitar error corse- julio ruiz
+  },
+})
+  .then((response) => response.json()) // convierte datos en json
+  .then((response) => console.log(JSON.stringify(response))) // imprime en consola la respuesta en formato json
+  .catch((error) => console.log(error)); // imprime en consola el error si falla algo
+
+  */
 
 
 

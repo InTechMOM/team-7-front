@@ -15,11 +15,36 @@
     padding-top: 100px; /* espacio entre la imagen y el contenido */
 	}
 
+@media only screen and (max-width: 900px) {
+		.header {
+		width: 100%;
+		}
+		}
+
+@media only screen and (min-width: 300px) {
+			.header {
+			width: 100%;
+			}
+			}	
+
+
 /*cuerpo de la página*/
 body {
 	font-family: 'Montserrat', sans-serif;
 	background-color: #fff;
 	}
+
+
+.title-bienvenida {
+	margin:auto;
+	margin-top: 0.5rem;
+	margin-bottom: 1rem;
+	width: 40%;
+	padding: 1rem;
+	text-align: center;
+	border-radius: 80px;
+	font-size: 32px;
+}
 
 /*cuadro del formulario login*/
 .login-container {
@@ -32,6 +57,7 @@ body {
 	background-color: #fff;
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 	}
+
 
 
 /*cuadro del correo y los dos checkbox*/
@@ -48,24 +74,30 @@ body {
 	margin-bottom: 1rem;
 	width: 40%;
 	padding: 1rem;
-	background-color: #24C4AC;
 	text-align: center;
 	border: 3px solid #fff;
 	border-radius: 80px;
-	font-size: 25px;
+	font-size: 32px;
 	}
 
 /*cuadro del correo electrónico*/
 #login-form #email {
 	margin: auto;
 	margin-bottom: 9px;
-	width: 70%;
+	width: 40%;
 	text-align: center;
 	padding: 0.5rem;
-	border: 3px solid #000000;
+	border: 2px solid #000;
+	background-color: #D0ECE7;
 	border-radius: 3px;
 	}
 
+#email {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 12px;
+}
+
+	
 /*labels*/
 .form-label {
 	display: block;
@@ -81,11 +113,12 @@ body {
 /*cuadros de soy profesor soy estudiante*/
 label.form-label {
 	margin: auto;
-	width: 70%;
+	width: 40%;
 	text-align: center;
 	padding: 0.5rem;
 	margin-bottom: 1.5rem;
-	border: 3px solid #000000;
+	border: 2px solid #000;
+	background-color: #D0ECE7;
 	border-radius: 3px;
 	}	
 
@@ -94,15 +127,16 @@ label.form-label {
 	margin:auto;
 	margin-top: 0.5rem;
 	margin-bottom: 1.5rem;
-	width: 43%;
+	width: 38%;
 	padding: 0.5rem 1rem;
-	background-color: #24C4AC;
+	background-color: #07E0C0;
 	font-family: 'Montserrat', sans-serif;
 	text-align: center;
-	border: 3px solid #fff;
+	border: 2px solid #000;
 	border-radius: 80px;
-	font-size: 15px;
+	font-size: 18px;
 	cursor: pointer;
+	
 	}
 
 /*Hover del botón*/
@@ -113,23 +147,21 @@ label.form-label {
 
 
 
-
-
-
+	
 /*PANTALLA DOCENTE*/
 
-/*Botones para regresar a la pantalla de LOGIN*/
+/*Botones para regresar/cerrar sesión a la pantalla de LOGIN*/
 .btn-inicio {
 	position: relative;
 	margin-top: 5px;
 	bottom: 10px;
 	right: 20px;
-	margin-left: 75%;
+	margin-left: 85%;
 	}
   
 .btn-cerrar-sesion {
 	display: inline-block;
-	background-color: #F5F5F5;
+	background-color: #D0ECE7;
 	font-family: 'Montserrat', sans-serif;
 	color: #000;
 	padding: 8px 10px;
@@ -137,7 +169,7 @@ label.form-label {
 	text-decoration: none;
 	font-size: 16px;
 	margin: 5px;
-	border: none;
+	border: 2px solid #000;
 	border-radius: 5px;
 	cursor: pointer;
 	}
@@ -148,14 +180,15 @@ label.form-label {
 	transition: all 0.2s ease;
  	}
 
+
 /* estilos base para el contenedor y los elementos del SELECT */
 
 .select-container {
     display: flex;
-	padding: 3rem;
+	padding: 0.9rem;
     flex-wrap: wrap;
     align-items: center;
-    margin-bottom: 1rem;
+	   
   	}
   
 /* label nombre */
@@ -163,8 +196,9 @@ label.form-label {
 .select-container label {
     margin-right: 2rem;
 	padding: 0.5rem;
-	background-color: #D9D9D9;
+	background-color: #D0ECE7;
 	border-radius: 0.25rem;
+	border: 2px solid #000;
 	}
   
 /*select menú*/
@@ -176,13 +210,14 @@ label.form-label {
 	text-align: center;
     font-size: 1rem;
     border: none;
-	background-color: #24C4AC;
+	background-color: #07E0C0;
     border-radius: 0.25rem;
+	border: 2px solid #000;
   	}
 
 /* Estilos para pantallas pequeñas */
   @media (max-width: 767px) {
-    .select-container label {
+    .select-container label, .url-container label {
       margin-bottom: 0.5rem;
     }
     #select-menu {
@@ -195,25 +230,33 @@ label.form-label {
 /* Estilos base para el contenedor y los elementos del label y URL */
 
 .url-container {
-	display: block;
-	align-items: center;
-	margin-bottom: 3rem;
-	padding-left: 3rem;
+	display: flex;
+	padding: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
+
 	}
 	  
 .url-container label {
 	margin-right: 1rem;
 	font-size: 1rem;
+	margin-right: 16rem;
+	padding: 0.5rem;
+	background-color: #AEA3A3;
+	border-radius: 0.25rem;
+	border: 2px solid #000;
 	}
 
 .url-container a {
 	margin-right: 0px;
 	font-size: 1rem;
-	color: blue;
+	color: black;
 	text-decoration: underline;
-	background-color: #86E4D4;
-	border-radius: 40px;
-	padding: 4px;
+	background-color: #24C4AC;
+	border-radius: 8px;
+	padding: 6px;
+	border: 2px solid #000;
+	
 	
 	}
 /* Estilos para el enlace al pasar el ratón por encima */
@@ -221,28 +264,67 @@ label.form-label {
 	color: red;
 	}
 
+
 /*Título CALIFICAR VIDEO*/
 
 .calification-title {
 	margin:auto;
+	margin-top: 1rem;
 	margin-bottom: 1rem;
 	width: 20%;
 	padding: 0.3rem;
-	background-color: #24C4AC;
+	background-color: #D9D9D9;
 	text-align: center;
-	border: 3px solid #fff;
+	border: 2px solid #000;
 	border-radius: 0.50rem;
-	font-size: 16px;
+	font-size: 14px;
 	}
 
 @media only screen and (max-width: 900px) {
 	.calification-title {
-	width: 100%;
+	width: 90%;
 	}
 	}
-	
 
-/*Barras de progreso*/
+
+/*Título DE HABILIDADES*/
+	
+.title-hability {
+	padding: 0.5rem;
+	background-color: #D0ECE7;
+	border-radius: 0.25rem;
+	border: 2px solid #000;
+	margin-bottom: 1.5rem;
+	
+	
+	}
+
+
+/*BARRAS DE PROGRESO*/
+
+/*posicionamiento de columnas*/
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.column {
+    flex-basis: 50%;
+    max-width: 50%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+}
+
+.column {
+    flex: 1;
+}
+
+/*posicionamiento de barras de progreso por habilidad*/
 
 .progress-bar-1 {
 	display: flex;
@@ -324,6 +406,15 @@ label.form-label {
 	color: #000;
  	}
 
+/*Responsive desing para las columnas*/
+
+@media screen and (max-width: 768px) {
+	.column {
+		flex-basis: 100%;
+		max-width: 100%;
+		}
+	}
+
 /* estilo botón GUARDAR*/
 
 .btn-container {
@@ -331,20 +422,20 @@ label.form-label {
 	margin-top: 5px;
 	bottom: 10px;
 	right: 20px;
-	margin-left: 75%;
+	margin-left: 47%;
 	}
   
 .btn {
 	display: inline-block;
-	background-color: #24C4AC;
+	background-color: #D0ECE7;
 	font-family: 'Montserrat', sans-serif;
 	color: #000;
-	padding: 8px 10px;
+	padding: 6px 10px;
 	text-align: center;
 	text-decoration: none;
 	font-size: 16px;
 	margin: 5px;
-	border: none;
+	border: 2px solid #000;
 	border-radius: 5px;
 	cursor: pointer;
 	}
@@ -354,8 +445,8 @@ label.form-label {
 	box-shadow: 0 4px 16px rgba(49, 138, 172, 1);
 	transition: all 0.2s ease;
  	}
-  
-  
+	
+
 
 
 
@@ -366,7 +457,7 @@ label.form-label {
 .container-colum {
 	display: flex;
 	justify-content: center;
-	margin-top: 10px;
+
 	}
   
 .column {
@@ -377,9 +468,10 @@ label.form-label {
 	}
   
 .input-box {
-	margin-bottom: 20px;
+	margin-bottom: 8px;
 	text-align: center;
 	padding: 4px;
+	outline: none;
 	}
   
 
@@ -388,11 +480,39 @@ h3 {
 	align-items: center;
 	font-size: 18px;
 	height: 30px;
-	margin-bottom: 5px;
-	background: #24C4AC;
-	border-radius: 15px;
-	padding: 5px;
+	margin-bottom: 3px;
+	background: #07E0C0;
+	border-radius: 3px;
+	border: 2px solid #000;
+	padding: 4px;
   	}
+
+
+.h3-azul {display: inline-flex;
+	align-items: center;
+	font-size: 18px;
+	color: #D0ECE7;
+	height: 30px;
+	margin-bottom: 3px;
+	background: #076EB0;
+	border-radius: 3px;
+	border: 2px solid #000;
+	padding: 4px;
+}
+
+.h3-celesteoscuro {
+	display: inline-flex;
+	align-items: center;
+	font-size: 18px;
+	height: 30px;
+	margin-bottom: 3px;
+	background: #D0ECE7;
+	border-radius: 3px;
+	border: 2px solid #000;
+	padding: 4px;
+
+}
+
 
 .container-circle-estudiante {
 	background: #D9D9D9;
@@ -405,25 +525,31 @@ h3 {
 	}
 
 input[type="text"]{
-	width: 100%;
+	margin-top: 6px;
+	width: 80%;
 	border-radius: 5px;
 	padding: 4px;
 	text-align: center;
+	background-color: #D9D9D9
 	}
 
 input::placeholder {
 	text-align: center;
   	line-height: 100px;/* Centrado vertical */
-	}
-
-.input-box-email {
-	width: 100%;
-	border-radius: 5px;
-	padding: 4px;
-	text-align: center;
+	font-family: 'Montserrat', sans-serif;
 	}
 	
 
+.input-box-email {
+	margin-top: 6px;
+	width: 80%;
+	border-radius: 5px;
+	padding: 4px;
+	text-align: center;
+	background-color: #D9D9D9;
+	}
+	
+	
 @media only screen and (max-width: 900px) {
 	.column {
 	width: 100%;
@@ -432,27 +558,36 @@ input::placeholder {
 
 /*campo de url del estudiante*/
 
-.form-group-estudiante label {
+/*.form-group-estudiante label {
 	display: block;
 	margin-bottom: 10px;
-	background: #24C4AC;
-	border-radius: 20px;
+	background: #07E0C0;
+	border: 2px solid #000;
+	border-radius: 3px;
 	padding: 5px;
-	}
+	}*/
 	  
 input[type="url"] {
 	display: block;
 	margin: 0 auto;
+	margin-top: 6px;
 	padding: 5px;
-	border-radius: 5px;
-	border: 1px solid #ccc;
+	border-radius: 15px;
+	border: 2px solid #000;
 	font-size: 12px;
-	width: 96%;
+	width: 150%;
 	height: 14px;
-	max-width: 400px;
+	max-width: 510px;
 	text-align: center;
+	background-color: #D9D9D9
+		
 	}
 	
+input[type="url"]::placeholder
+	{font-family: 'Montserrat', sans-serif;
+	}
+
+
 /*textarea descripción del video*/
 
 .container-textarea {
@@ -464,20 +599,23 @@ input[type="url"] {
 .textinput {
 	width: 100%;
 	font-size: 15px;
-	background-color: rgb(224, 217, 217); /* Cambia el color de fondo */
+	background-color: #86E4D4; /* Cambia el color de fondo */
   	color: #333; /* Cambia el color de texto */
-	border: 1px solid rgba(217, 217, 217, 0.46);
+	border: 2px solid #000;
 	border-radius: 5px;
 	resize: vertical; /* Permite redimensionar verticalmente */
 	min-height: 20px; /* Altura mínima */
 	max-height: 300px; /* Altura máxima */
 	overflow-y: auto; /* Añade scroll cuando se supera la altura máxima */
+	margin-top: 6px;
 	}
 
 .textinput::placeholder {
 	text-align: center;
 	line-height: 100px;/* Centrado vertical */
+	font-family: 'Montserrat', sans-serif;
 	}
+	
 
 
 
