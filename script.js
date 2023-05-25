@@ -34,6 +34,8 @@ circles4.forEach((circle) => {
 });
 
 
+//mandar el numero el backed solo debe recibir el número; traer los componentes de los circulos; guardarlo en una variables los
+//que se seleccionaron.
 
 
 

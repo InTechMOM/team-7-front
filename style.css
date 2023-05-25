@@ -35,7 +35,7 @@ body {
 	}
 
 
-.title-bienvenida {
+.title-bienvenidalog {
 	margin:auto;
 	margin-top: 0.5rem;
 	margin-bottom: 1rem;
@@ -44,6 +44,18 @@ body {
 	text-align: center;
 	border-radius: 80px;
 	font-size: 32px;
+	color: white;
+}
+
+.title-bienvenidadoc{
+	
+	max-width: 100%;
+	max-height: 100%;
+	text-align: center;
+	border-radius: 80px;
+	font-size: 23px;
+	color: white;
+
 }
 
 /*cuadro del formulario login*/
@@ -91,12 +103,6 @@ body {
 	background-color: #D0ECE7;
 	border-radius: 3px;
 	}
-
-#email {
-	font-family: 'Montserrat', sans-serif;
-	font-size: 12px;
-}
-
 	
 /*labels*/
 .form-label {
@@ -161,9 +167,9 @@ label.form-label {
   
 .btn-cerrar-sesion {
 	display: inline-block;
-	background-color: #D0ECE7;
+	background-color: #EAF2F8;
 	font-family: 'Montserrat', sans-serif;
-	color: #000;
+	color: #1B4F72;
 	padding: 8px 10px;
 	text-align: center;
 	text-decoration: none;
@@ -198,7 +204,7 @@ label.form-label {
 	padding: 0.5rem;
 	background-color: #D0ECE7;
 	border-radius: 0.25rem;
-	border: 2px solid #000;
+	
 	}
   
 /*select menú*/
@@ -210,7 +216,7 @@ label.form-label {
 	text-align: center;
     font-size: 1rem;
     border: none;
-	background-color: #07E0C0;
+	background-color: #EAF2F8;
     border-radius: 0.25rem;
 	border: 2px solid #000;
   	}
@@ -242,9 +248,9 @@ label.form-label {
 	font-size: 1rem;
 	margin-right: 16rem;
 	padding: 0.5rem;
-	background-color: #AEA3A3;
+	background-color: #D0ECE7;
 	border-radius: 0.25rem;
-	border: 2px solid #000;
+	
 	}
 
 .url-container a {
@@ -252,7 +258,7 @@ label.form-label {
 	font-size: 1rem;
 	color: black;
 	text-decoration: underline;
-	background-color: #24C4AC;
+	background-color: #EAF2F8;
 	border-radius: 8px;
 	padding: 6px;
 	border: 2px solid #000;
@@ -261,7 +267,7 @@ label.form-label {
 	}
 /* Estilos para el enlace al pasar el ratón por encima */
 	.url-container a:hover {
-	color: red;
+	color: #CD1414;
 	}
 
 
@@ -273,9 +279,9 @@ label.form-label {
 	margin-bottom: 1rem;
 	width: 20%;
 	padding: 0.3rem;
-	background-color: #D9D9D9;
+	background-color: #76D7C4;
 	text-align: center;
-	border: 2px solid #000;
+	
 	border-radius: 0.50rem;
 	font-size: 14px;
 	}
@@ -293,7 +299,7 @@ label.form-label {
 	padding: 0.5rem;
 	background-color: #D0ECE7;
 	border-radius: 0.25rem;
-	border: 2px solid #000;
+	
 	margin-bottom: 1.5rem;
 	
 	
@@ -427,7 +433,7 @@ label.form-label {
   
 .btn {
 	display: inline-block;
-	background-color: #D0ECE7;
+	background-color: #07E0C0;
 	font-family: 'Montserrat', sans-serif;
 	color: #000;
 	padding: 6px 10px;
@@ -471,7 +477,7 @@ label.form-label {
 	margin-bottom: 8px;
 	text-align: center;
 	padding: 4px;
-	outline: none;
+	
 	}
   
 
@@ -481,9 +487,10 @@ h3 {
 	font-size: 18px;
 	height: 30px;
 	margin-bottom: 3px;
-	background: #07E0C0;
+	color: #D0ECE7;
+	background: #076EB0;
 	border-radius: 3px;
-	border: 2px solid #000;
+	
 	padding: 4px;
   	}
 
@@ -496,7 +503,7 @@ h3 {
 	margin-bottom: 3px;
 	background: #076EB0;
 	border-radius: 3px;
-	border: 2px solid #000;
+	
 	padding: 4px;
 }
 
@@ -506,9 +513,10 @@ h3 {
 	font-size: 18px;
 	height: 30px;
 	margin-bottom: 3px;
-	background: #D0ECE7;
+	color: #D0ECE7;
+	background: #076EB0;
 	border-radius: 3px;
-	border: 2px solid #000;
+	
 	padding: 4px;
 
 }
@@ -525,28 +533,40 @@ h3 {
 	}
 
 input[type="text"]{
+	display: block;
+	margin: 0 auto;
 	margin-top: 6px;
-	width: 80%;
-	border-radius: 5px;
-	padding: 4px;
+	padding: 5px;
+	border: 2px solid #000;
+	border-radius: 6px;
+	font-size: 12px;
+	width: 150%;
+	height: 14px;
+	max-width: 510px;
 	text-align: center;
-	background-color: #D9D9D9
+	background-color: #EAF2F8;
 	}
 
 input::placeholder {
 	text-align: center;
   	line-height: 100px;/* Centrado vertical */
-	font-family: 'Montserrat', sans-serif;
+	
 	}
 	
 
 .input-box-email {
+	display: block;
+	margin: 0 auto;
 	margin-top: 6px;
-	width: 80%;
-	border-radius: 5px;
-	padding: 4px;
+	padding: 5px;
+	border: 2px solid #000;
+	border-radius: 6px;
+	font-size: 12px;
+	width: 150%;
+	height: 14px;
+	max-width: 510px;
 	text-align: center;
-	background-color: #D9D9D9;
+	background-color: #EAF2F8;
 	}
 	
 	
@@ -572,21 +592,17 @@ input[type="url"] {
 	margin: 0 auto;
 	margin-top: 6px;
 	padding: 5px;
-	border-radius: 15px;
 	border: 2px solid #000;
+	border-radius: 6px;
 	font-size: 12px;
 	width: 150%;
 	height: 14px;
 	max-width: 510px;
 	text-align: center;
-	background-color: #D9D9D9
+	background-color: #EAF2F8;
 		
 	}
 	
-input[type="url"]::placeholder
-	{font-family: 'Montserrat', sans-serif;
-	}
-
 
 /*textarea descripción del video*/
 
@@ -599,7 +615,7 @@ input[type="url"]::placeholder
 .textinput {
 	width: 100%;
 	font-size: 15px;
-	background-color: #86E4D4; /* Cambia el color de fondo */
+	background-color: #EAF2F8; /* Cambia el color de fondo */
   	color: #333; /* Cambia el color de texto */
 	border: 2px solid #000;
 	border-radius: 5px;
@@ -612,8 +628,9 @@ input[type="url"]::placeholder
 
 .textinput::placeholder {
 	text-align: center;
-	line-height: 100px;/* Centrado vertical */
-	font-family: 'Montserrat', sans-serif;
+	line-height: 200px;/* Centrado vertical */
+	
+	
 	}
 	
 
