@@ -37,6 +37,7 @@ circles4.forEach((circle) => {
 
 
 
+
 /*CUADRO DE CORREO: Límitar extensión de correo y caracteres del correo*/
 
 function validarEmail() {
@@ -46,6 +47,7 @@ function validarEmail() {
     return false;
   }
 }
+
 
 
 
@@ -64,7 +66,7 @@ if (loginForm != null) {
   
     if (isValidEmail(email) && role) {      /*verifica el correo y rol y redirige*/
   
-    fetch("https://team-7-back-demo.onrender.com/api/users/"+email, { // traer informacion
+    fetch("https://team-7-back-demo.onrender.com/api/users/"+email, { // traer informacion del API
     method: "GET",
     headers: {
       "Accept":"application/json", // tipo de dato json siempre debe ir
@@ -117,6 +119,11 @@ function _mapUrlParams(queryString) {
     }, {});
 }
 
+
+
+
+// para que me TRAIGA el NOMBRE a los campos nombre líder y correo líder
+
 let nameLeader = document.getElementById('name-leader')
 if (nameLeader != null) {
   var param = getUrlParams(parent.document.URL);
@@ -138,13 +145,13 @@ if (nameLeader != null) {
 }
   ) // imprime en consola la respuesta en formato json
   .catch((error) => alert('Ingrese un correo válido y seleccione un rol')); // imprime en consola el error si falla algo
-
   }
 
 function isValidEmail(email) {     /*para verificar el formato de correo electrónico*/
   var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return emailRegex.test(email);
   }
+
 
 
 
@@ -159,6 +166,10 @@ function confirmarEnvio() {
 
 
 
+
+
+
+
 //Vinculación frontend y backend
 
 /* 1. Para vincular frontend y backend en LOGIN Método: GET
@@ -166,7 +177,7 @@ Objetivo: Que me permita acceder a las pantallas (estudiante/docente) de acuerdo
 en la base de datos si no está en la BD o se coloca un rol que no corresponde me genere un mensaje: usuario no válido
 End point: GET – Users */
 
-fetch("https://team-7-back-demo.onrender.com/api/users", { // traer informacion
+/*fetch("https://team-7-back-demo.onrender.com/api/users", { // traer informacion
   method: "GET",
   headers: {
     "Accept":"application/json", // tipo de dato json siempre debe ir
@@ -177,6 +188,7 @@ fetch("https://team-7-back-demo.onrender.com/api/users", { // traer informacion
   .then((response) => response.json()) // convierte datos en json
   .then((response) => console.log(JSON.stringify(response))) // imprime en consola la respuesta en formato json
   .catch((error) => console.log(error)); // imprime en consola el error si falla algo
+  */
 
 
 
@@ -231,7 +243,6 @@ const loginResponse = fetch('https://team-7-back.onrender.com/api/users',
 { method: 'GET'}).then((response) =>  
 response.json()).then((response) => 
 console.log(response))
-
 
 
 
