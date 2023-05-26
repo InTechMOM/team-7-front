@@ -129,7 +129,7 @@ label.form-label {
 	}	
 
 /*Propiedades del botón ingresar*/
-#submit {
+.submit {
 	margin:auto;
 	margin-top: 0.5rem;
 	margin-bottom: 1.5rem;
@@ -146,7 +146,7 @@ label.form-label {
 	}
 
 /*Hover del botón*/
-#submit:hover {
+.submit:hover {
 	background-color: #86E4D4;
 	}
 
@@ -431,7 +431,7 @@ label.form-label {
 	margin-left: 47%;
 	}
   
-.btn {
+.btn-guardar {
 	display: inline-block;
 	background-color: #07E0C0;
 	font-family: 'Montserrat', sans-serif;
@@ -460,7 +460,7 @@ label.form-label {
 
 /*input para cargar el video*/
 
-.container-colum {
+.containerVideo {
 	display: flex;
 	justify-content: center;
 
@@ -481,46 +481,49 @@ label.form-label {
 	}
   
 
-h3 {
-	display: inline-flex;
+h3 {   /*titulo del proyecto*/ 
+	display: inline-block;
 	align-items: center;
-	font-size: 18px;
-	height: 30px;
-	margin-bottom: 3px;
+	width: 50%;
+	font-size: 16px;
+	height: 20px;
+	margin-bottom: 8px;
 	color: #D0ECE7;
 	background: #076EB0;
-	border-radius: 3px;
-	
-	padding: 4px;
+	border-radius: 15px;
+	padding: 7px;
+	text-align: center;
   	}
 
 
-.h3-azul {display: inline-flex;
+.h3-azul {  /*titulo líder, email lider, email profesor, URL*/
+	display: inline-block;
 	align-items: center;
-	font-size: 18px;
-	color: #D0ECE7;
-	height: 30px;
-	margin-bottom: 3px;
-	background: #076EB0;
-	border-radius: 3px;
-	
-	padding: 4px;
-}
-
-.h3-celesteoscuro {
-	display: inline-flex;
-	align-items: center;
-	font-size: 18px;
-	height: 30px;
-	margin-bottom: 3px;
+	width: 50%;
+	font-size: 16px;
+	height: 20px;
+	margin-bottom: 16px;
 	color: #D0ECE7;
 	background: #076EB0;
-	border-radius: 3px;
-	
-	padding: 4px;
-
+	border-radius: 15px;
+	padding: 7px;
+	text-align: center;
 }
 
+.h3-celesteoscuro {   /*titulo descripción del video*/
+	display: inline-block;
+	align-items: center;
+	width: 50%;
+	font-size: 16px;
+	height: 20px;
+	margin-bottom: 6px;
+	color: #D0ECE7;
+	background: #076EB0;
+	border-radius: 15px;
+	padding: 7px;
+	text-align: center;
+
+}
 
 .container-circle-estudiante {
 	background: #D9D9D9;
@@ -535,16 +538,13 @@ h3 {
 input[type="text"]{
 	display: block;
 	margin: 0 auto;
-	margin-top: 6px;
 	padding: 5px;
+	border-radius: 5px;
 	border: 2px solid #000;
-	border-radius: 6px;
 	font-size: 12px;
-	width: 150%;
+	width: 75%;
 	height: 14px;
-	max-width: 510px;
 	text-align: center;
-	background-color: #EAF2F8;
 	}
 
 input::placeholder {
@@ -557,16 +557,13 @@ input::placeholder {
 .input-box-email {
 	display: block;
 	margin: 0 auto;
-	margin-top: 6px;
 	padding: 5px;
+	border-radius: 5px;
 	border: 2px solid #000;
-	border-radius: 6px;
 	font-size: 12px;
-	width: 150%;
+	width: 75%;
 	height: 14px;
-	max-width: 510px;
 	text-align: center;
-	background-color: #EAF2F8;
 	}
 	
 	
@@ -590,16 +587,13 @@ input::placeholder {
 input[type="url"] {
 	display: block;
 	margin: 0 auto;
-	margin-top: 6px;
 	padding: 5px;
+	border-radius: 5px;
 	border: 2px solid #000;
-	border-radius: 6px;
 	font-size: 12px;
-	width: 150%;
+	width: 75%;
 	height: 14px;
-	max-width: 510px;
 	text-align: center;
-	background-color: #EAF2F8;
 		
 	}
 	

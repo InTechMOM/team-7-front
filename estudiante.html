@@ -23,9 +23,7 @@
 
   </header>
 
-  
-  <div>
-  <div class="container-colum">
+  <div class="containerVideo">
     <div class="column">
         <div class="input-box">
           <h3 class="h3-azul">Líder del proyecto</h3>
@@ -37,22 +35,22 @@
                       </div>
                         <div class="input-box" onsubmit="return validarEmail()">
                          <h3 class="h3-azul">Email profesor</h3>
-                          <input class="input-box-email" type="email" id="email" name="email" requiredminlength="4" maxlength="256" placeholder="Correo electrónico de tu profesor aquí"> 
+                          <input class="input-box-email" id="emailTeacher" type="email" name="email" requiredminlength="4" maxlength="256" placeholder="Correo electrónico de tu profesor aquí"> 
                             </div>
                               <div class="form-group-estudiante">
                                 <h3 class="h3-azul" for="input-url-estudiante">Pegar URL:</h3>
-                                 <input type="url" id="input-url" name="url" placeholder="URL aquí">
+                                 <input type="url" id="URL" name="url" placeholder="URL aquí">
                                   </div>
     </div>
     <div class="column">
       <div class="input-box">
         <h3>Título del proyecto</h3>
-          <input type="text" minlength="4" maxlength="80" placeholder="El título de tu proyecto EJ: El Universo">
+          <input type="text" id="title" minlength="4" maxlength="80" placeholder="El título de tu proyecto EJ: El Universo">
             </div>
                 <div class="input-box">
                   <h3 class="h3-celesteoscuro">Descripción del video</h3>
                     <div class="container-textarea">
-                      <textarea class="textinput" minlength="4" maxlength="500" placeholder="Describe tu proyecto" rows="12" cols="43"></textarea>
+                      <textarea class="textinput" id="description" minlength="4" maxlength="500" placeholder="Describe tu proyecto" rows="12" cols="43"></textarea>
                         </div>
                          </div>
 
@@ -60,8 +58,8 @@
     
   </div>
     
-  <form class="btn-container" onsubmit="return confirmarEnvio()">
-    <button type="submit" value="Enviar" id="estudiante-btn" class="btn">ENVIAR</button>
+  <form class="btn-container">
+    <button type="button" value="Enviar" id="submit-student" class="btn-guardar">ENVIAR</button>
   </form>
   
 
