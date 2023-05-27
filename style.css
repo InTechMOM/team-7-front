@@ -100,7 +100,7 @@ body {
 	text-align: center;
 	padding: 0.5rem;
 	border: 2px solid #000;
-	background-color: #D0ECE7;
+	background-color:  #EAF2F8;
 	border-radius: 3px;
 	}
 	
@@ -175,7 +175,7 @@ label.form-label {
 	text-decoration: none;
 	font-size: 16px;
 	margin: 5px;
-	border: 2px solid #000;
+	border: 2px solid #1B4F72;
 	border-radius: 5px;
 	cursor: pointer;
 	}
