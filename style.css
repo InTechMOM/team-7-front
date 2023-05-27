@@ -446,7 +446,7 @@ label.form-label {
 	cursor: pointer;
 	}
 
-.btn:hover {
+.btn-guardar:hover {
 	color: rgb(162, 250, 250) !important;
 	box-shadow: 0 4px 16px rgba(49, 138, 172, 1);
 	transition: all 0.2s ease;

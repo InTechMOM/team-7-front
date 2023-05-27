@@ -1,4 +1,3 @@
-
 /* 1. Para vincular frontend y backend en LOGIN Método: GET
 Objetivo: Que me permita acceder a las pantallas (estudiante/docente) con el correo y el rol que se encuentran en la base de datos si no está en la BD o se coloca un rol que no corresponde me genere un mensaje: usuario no válido.
 End point: GET – Users Ok
@@ -67,10 +66,13 @@ function _mapUrlParams(queryString) {
 
 
 
+
+
 /* 2. Para vincular frontend y backend en ESTUDIANTE Método: POST
 Objetivo: Que me permita enviar los datos ingresados al formulario y se envíe la información a la BD al dar clic en guardar 
-End Point: GET – Users OK /  POST - Videos  OK   / //QUE FALTA: Vincular front con la base de datos - Front 25/05/2023*/
+End Point: GET – Users OK /  POST - Videos  OK   / //
 
+QUE FALTA: Vincular front con la base de datos - Front 25/05/2023*/ 
 
 // Para que me TRAIGA el NOMBRE a los campos nombre líder y correo líder en la pantalla ESTUDIANTE - GET user:
 
@@ -98,6 +100,8 @@ if (nameLeader != null) {
   return emailRegex.test(email);}
   
 
+
+
 //CUADRO DE CORREO: Límitar extensión de correo y caracteres del correo:
 
 function validarEmail() {
@@ -108,8 +112,6 @@ function validarEmail() {
   }
 }
 
-
-
 //Fetch POST - Videos
 
 /* Manejar el evento de envío del formulario
@@ -118,26 +120,32 @@ containerVideo.addEventListener('submit-student', function (event) {
   event.preventDefault(); // Evitar que el formulario se envíe de forma tradicional */
 
   
-
-  let containerVideo = document.getElementById('submit-student')
-if (containerVideo != null) {containerVideo.addEventListener('onClick',function(e) {
+let containerVideo = document.getElementById('submit-student')
+if (containerVideo != null) {containerVideo.addEventListener('click',function(e) {
   
-  confirm("¿Estás seguro que deseas enviar el formulario?") 
+  
+  if (confirm ("¿Estás seguro que deseas enviar el formulario?") == false) {
+    return
+  }
   e.preventDefault();
-
 
   // Obtener los valores de los campos de entrada
   const emailTeacher = document.getElementById('emailTeacher').value;
   const URL = document.getElementById('URL').value;
-  const professorEmail = document.getElementById('title').value;
+  const title = document.getElementById('title').value;
   const description = document.getElementById('description').value;
+  const nameStudent = document.getElementById('name-leader').value;
+  const emailStudent = document.getElementById('email-student').value;
 
   // Crear un objeto con los datos del video
   const videoData = {
     emailTeacher: emailTeacher,
-    URL: URL,
+    url: URL,
     title: title,
-    description : description
+    description : description,
+    nameStudent : nameStudent,
+    emailStudent : emailStudent,
+
   };
 
   sendVideo(videoData); // Enviar el video al backend
@@ -150,6 +158,7 @@ async function sendVideo(videoData) {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
+        
       },
       body: JSON.stringify(videoData)
     }).then((response) => response.json()) // convierte datos en json
@@ -162,21 +171,11 @@ async function sendVideo(videoData) {
     }) // imprime en consola la respuesta en formato json
     .catch((error) => alert('Ingrese un correo válido y seleccione un rol')); // imprime en consola el error si falla algo;
 
-
-
     
   } catch (error) {
     console.log('Error de conexión:', error);
   }
 }
-
-
-
-
-
-
-
-
 
 /* 3. Para vincular frontend y backend en DOCENTE Método: GET y POST
 Objetivo: Que me muestre los estudiantes y la url que están pendientes por calificar para luego colocar una nota por habilidad y al dar clic en guardar se envié la información de esas calificaciones a la base de datos 
@@ -220,10 +219,10 @@ circles4.forEach((circle) => {
   });
 });
 
-
 //Envío de calificaciones - POST Calificaciones
 
 //obtener la data del formulario, por cada botón tengo una clase progressbar1.2.3.4 por id lo traigo vienen dentro de un array:
+
 
 function getFormData() {
   const progressBarOne = document.getElementById("progress-bar-1")
@@ -255,6 +254,16 @@ function getFormData() {
   return formattedNotes
   }
 
+
+  
+//ALERTA DESEA ENVIAR LA INFORMACIÓN en pantalla y estudiante botón enviar y guardar*/ 
+
+function pregunta(){
+  if (confirm('¿Estas seguro de enviar este formulario?')){
+     document.tuformulario.submit()
+  }
+}
+
   //const submitButton = document.getElementById("docente-btn")  //cuando doy clic en guardar
   //submitButton.addEventListener("click", confirmarEnvio)
   
@@ -268,7 +277,6 @@ function getFormData() {
   function confirmarEnvio() {
   return confirm("¿Estás seguro de que deseas enviar el formulario?");
   }*/
-
 
 
 
