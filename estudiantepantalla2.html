@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Estudiante - Ver Calificaciones</title>
+    <link rel="icon" type="image/x-icon" href="imagenes/Captura.PNG">
+    <link rel="stylesheet" href="style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap" rel="stylesheet">
+  	
+</head>
+
+<body>
+
+	<header class="header">
+
+  </header>
+
+  <div class="container-colum">
+    <div class="column">
+        <div class="input-box">
+          <h3>Líder del proyecto</h3>
+            <input type="text" minlength="4" maxlength="80" placeholder="EJ: Juan Gómez">
+               </div>
+            <div class="input-box" onsubmit="return validarEmail()">
+              <h3>Email líder del proyecto</h3>
+                <input class="input-box-email" type="email" id="email" name="email" minlength="4" maxlength="256" placeholder="Correo electrónico"> 
+                  </div>
+                    <div class="form-group-estudiante">
+                     <label for="input-url-estudiante">URL:</label>
+                      <input type="url" id="input-url" name="url" placeholder="Url aquí">
+                        </div>
+
+    </div>
+    <div class="column">
+        <div class="input-box">
+          <h3>TITULO DEL PROYECTO</h3>
+            <input type="text" minlength="4" maxlength="80" placeholder="EJ: El Universo">
+              </div>
+                <div class="input-box">
+                  <h3>Descripción del video</h3>
+                    <div class="container-textarea">
+                      <textarea class="textinput" minlength="4" maxlength="500" placeholder="Escribe aquí" rows="8" cols="40"></textarea>
+                        </div>
+                         </div>
+
+    </div>
+
+
+    <div class="column">
+      <h3>Ver Calificaciones</h3>
+        <div class="input-box-select">
+          <select id="proyecto-estudiante">
+          <option value="proyecto1">Proyecto 1</option>
+          <option value="proyecto2">Proyecto 2</option>
+          <option value="proyecto3">Proyecto 3</option>
+          </select>
+        </div>
+      
+    <div class="container-circle-estudiante">
+        <div class="line">
+          <p>Comunicación</p>
+           <div class="circle-2" data-index="100%">100%</div>
+             </div>
+              <div class="line">
+               <p>Colaboración</p>
+               <div class="circle-2" data-index="40%">40%</div>
+                 </div>
+                  <div class="line">
+                   <p>Pensamiento Crítico</p>
+                    <div class="circle-2" data-index="80%">80%</div>
+                      </div>
+                        <div class="line">
+                          <p>Creatividad</p>
+                            <div class="circle-2" data-index="60%">60%</div>
+                              </div>
+                            </div>
+    </div>
+  </div>
+  
+  <div class="btn-container">
+    <button class="btn">SALIR</button>
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+
+        
+</html>
